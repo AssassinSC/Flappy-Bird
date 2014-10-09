@@ -127,7 +127,7 @@ namespace WpfApplication3
                 //eA.EasingMode = EasingMode.EaseOut;
                 //eA.Oscillations = 100;
                 //eA.Springiness = 100;
-                a.EasingFunction = eA;////
+                a.EasingFunction = eA;//////
 
                 a.From = X; //100; //Canvas.GetTop(Pic); -- начало
                 a.To = 260;//Convas.Height + 48;           -- конец
