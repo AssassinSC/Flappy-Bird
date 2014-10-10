@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.Timers;
 using System.Windows.Threading;
+using System.IO;
+using System.Xml;
 
 namespace WpfApplication3
 {
@@ -28,6 +30,7 @@ namespace WpfApplication3
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer timerBird = new DispatcherTimer();
         List<Rectangle> ListRect = new List<Rectangle> { };
@@ -154,11 +157,18 @@ namespace WpfApplication3
             this.timerBird.Stop();
             this.St.Pause(this);            
             Convas_1.Visibility = Visibility.Visible;
+
+            int Scores = 0;
             if (St.Children.Count > 4)
             {
-                TextBlock2.Text = TextBlock2.Text + (this.St.Children.Count/2 -2);
+                Scores = this.St.Children.Count/2 - 2;
             }
-            else TextBlock2.Text =  TextBlock2.Text + 0;
+            //else TextBlock2.Text =  TextBlock2.Text + 0;
+            //TextBlock2.Text = TextBlock2.Text + String.Format("  {0}",Scores);
+
+
+
+            ReadText();
         }
        
 
@@ -264,6 +274,21 @@ namespace WpfApplication3
             Convas_1.Visibility = Visibility.Hidden;
             this.Close();
         }
+
+        public void ReadText()
+        {           
+            StreamReader file = new StreamReader(@"1.txt");
+            FileReader overview = new FileReader();
+            overview.title = file.ReadToEnd();
+            TextBlockFileReader.Text = TextBlockFileReader.Text + overview.title;
+        }
+        public void WriteText()
+        {
+
+        }
+
+        List<TextBox> ListofTextbox = new List<TextBox> {
+        new TextBox()};
     }
 }
 

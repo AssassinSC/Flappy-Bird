@@ -15,12 +15,22 @@
         <Canvas x:Name="Convas" HorizontalAlignment="Left" Height="319" VerticalAlignment="Top" Width="579" Grid.ColumnSpan="3" Margin="-62,0,0,0">
             <Image x:Name="Pic" Source="Bird.png" Canvas.Left="288" Height="48" Width="41" RenderTransformOrigin="0.5,0.573" Canvas.Top="105"/>
         </Canvas>
-        <Canvas Visibility="Hidden" x:Name="Convas_1" HorizontalAlignment="Left" Height="286" Margin="10,10,0,0" VerticalAlignment="Top" Width="497" Grid.ColumnSpan="3">
+        <Canvas Visibility="Visible" x:Name="Convas_1" HorizontalAlignment="Left" Height="286" Margin="10,10,0,0" VerticalAlignment="Top" Width="497" Grid.ColumnSpan="3">
+            <Button Click="Button_Click" Content="Yes" Canvas.Top="266" Width="55" Height="20"/>
+            <Button Click="Button_Click_1" Content="EXIT" Canvas.Left="442" Canvas.Top="266" Width="55" Height="19"/>
+            <TextBlock x:Name="TextBlock1" TextAlignment="Center" Canvas.Left="163" TextWrapping="Wrap" Canvas.Top="58" Width="158" Height="48"><Run Text="YOU LOSE. "/><LineBreak/><Run Text="WANT TO TRY AGAIN?"/></TextBlock>
 
-            <Button Click="Button_Click" Content="Yes" Canvas.Left="70" Canvas.Top="125" Width="191" Height="77"/>
-            <Button Click="Button_Click_1" Content="EXIT" Canvas.Left="266" Canvas.Top="125" Width="191" Height="77"/>
-            <TextBlock x:Name="TextBlock1" TextAlignment="Center" Canvas.Left="196" TextWrapping="Wrap" Canvas.Top="56" Width="158" Height="48"><Run Text="YOU LOSE. "/><LineBreak/><Run Text="WANT TO TRY AGAIN?"/></TextBlock>
-            <TextBlock x:Name="TextBlock2" TextAlignment="Center" Canvas.Left="218" TextWrapping="Wrap" Canvas.Top="260" Width="103"><Run Text="SCORES :"/></TextBlock>
+            <!--<TextBlock x:Name="TextBlock2" TextAlignment="Center" Canvas.Left="193" TextWrapping="Wrap" Canvas.Top="260" Width="103">SCORES:</TextBlock>-->
+        </Canvas>
+        <Canvas HorizontalAlignment="Left" Height="181" Margin="10,10,0,0" VerticalAlignment="Top" Width="480" Grid.ColumnSpan="3">
+            <TextBlock x:Name="TextBlockFileReader" Canvas.Left="10" TextWrapping="Wrap" TextAlignment="Center" Canvas.Top="10" Height="133" Width="477">Таблица результатов</TextBlock>
+            <ListView x:Name="ListView1" Height="100" Canvas.Left="61" Canvas.Top="171" Width="100">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Canvas>
     </Grid>
 </Window>
